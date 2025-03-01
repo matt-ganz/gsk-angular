@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+
+  & > * {
+    display: block;
+    flex: 1;
+    max-width: 350px;
+  }
+
+  & > * + * {
+    margin-left: 10px;
+  }
+}

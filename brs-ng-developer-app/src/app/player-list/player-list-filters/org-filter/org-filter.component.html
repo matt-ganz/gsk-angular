@@ -1,0 +1,9 @@
+<mat-form-field appearance="fill">
+  <mat-label>Organization</mat-label>
+  <mat-select [formControl]="orgControl">
+    <mat-option [value]="null">-</mat-option>
+    <mat-option *ngFor="let org of orgs$ | async" [value]="org.teamId">
+      {{ org.name }} {{ org.nickname }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

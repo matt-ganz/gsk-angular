@@ -1,0 +1,26 @@
+<div class="list">
+  <player-list-filters></player-list-filters>
+  <div class="table-wrapper">
+    <table matSort matSortActive="LASTNAME" matSortDirection="asc">
+      <tr>
+        <th mat-sort-header="LASTNAME" class="left">Name</th>
+        <th mat-sort-header="POSITIONID">Pos</th>
+        <th mat-sort-header="BATTINGHAND">Batting Hand</th>
+        <th mat-sort-header="ORG">Org</th>
+        <th mat-sort-header="TEAMNAME">Team</th>
+      </tr>
+
+      <tr
+        *ngFor="let player of players$ | async"
+        class="clickable-row"
+        (click)="openDialog($event)"
+      >
+        <td class="left">{{ player.LASTNAME }}, {{ player.FIRSTNAME }}</td>
+        <td>{{ player.POSITION }}</td>
+        <td>{{ player.BATTINGHAND }}</td>
+        <td>{{ player.ORG }}</td>
+        <td>{{ player.TEAMNAME }} {{ player.TEAMNICKNAME }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
